@@ -1,0 +1,12 @@
+.card {
+    box-sizing: border-box;
+    border: 3px solid #278080;
+    padding: 10px;
+    background: white;
+    width: 250px;
+  }
+
+  #res-name{
+    font-weight: bolder;
+    color: #278080;
+  }
