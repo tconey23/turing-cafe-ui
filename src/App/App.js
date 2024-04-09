@@ -32,7 +32,7 @@ function App() {
         <Resy reservations={reservations} />
       </div>
     </div>
-  );
+  )
 }
 
 export default App
