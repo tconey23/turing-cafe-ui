@@ -26,17 +26,17 @@ describe('Turing Cafe Reservations', () => {
 
 
 
-  it('should display a form with the properly named input fields', () => {
+  it('should display a form with the properly named input fields and submission button', () => {
       cy.get('.App')
         .find('.resy-form')
         .within(() => {
-          cy.get('[placeholder="Name"]')
+          cy.get('input[name="name"]')
             .should('exist')
-          cy.get('[placeholder="Date"]')
+          cy.get('input[name="date"]')
             .should('exist')
-          cy.get('[placeholder="Time"]')
+          cy.get('input[name="time"]')
             .should('exist')
-          cy.get('[placeholder="Guests"]')
+          cy.get('input[name="guests"]')
            .should('exist')
         })  
   })
@@ -60,7 +60,7 @@ describe('Turing Cafe Reservations', () => {
     })
 
 
-  it('should add a booking upon form submission', () => {
+  it('should add a booking upon form submission and all booking data should be displayed on the booking card', () => {
     cy.get('.App > .resy-form')
       .get('input[name="name"]').type('Tom')
       .get('input[name="date"]').type('4/9')
@@ -76,23 +76,5 @@ describe('Turing Cafe Reservations', () => {
           .should('contain','8:00 pm')
           .should('contain','Number of guests: 5')
     })
-
-    it('should add a booking upon form submission', () => {
-      cy.get('.App > .resy-form')
-        .get('input[name="name"]').type('Tom')
-        .get('input[name="date"]').type('4/9')
-        .get('input[name="time"]').type('8:00 pm')
-        .get('input[name="guests"]').type(5)
-        .get('button').click()
-  
-        cy.get('.App >.resy-container')
-          .get(':nth-child(3)')
-            .should('exist')
-            .should('contain','Tom')
-            .should('contain','4/9')
-            .should('contain','8:00 pm')
-            .should('contain','Number of guests: 5')
-      })
-
-  
+      
 })

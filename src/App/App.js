@@ -1,7 +1,7 @@
-import './App.css';
-import React from 'react';
+import './App.css'
+import React from 'react'
 import { useState, useEffect } from 'react'
-import { fetchReservations } from '../APICalls';
+import { fetchReservations } from '../APICalls'
 import Resy from '../Resy/Resy'
 import Form from '../Form/Form'
 
@@ -20,7 +20,6 @@ function App() {
 
   function addResy(newResy) {
     setReservations([...reservations, newResy])
-    console.log(newResy)
   }
 
   return (
@@ -36,4 +35,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App

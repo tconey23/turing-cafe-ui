@@ -1,9 +1,7 @@
 import './Resy.css'
 import Card from '../Card/Card'
-import { useEffect } from 'react'
 
 function Resy({reservations}) {
-console.log(reservations)
 let resCard
 
     if(reservations){
